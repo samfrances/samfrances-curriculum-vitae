@@ -1,0 +1,231 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% "ModernCV" CV and Cover Letter
+% LaTeX Template
+% Version 1.1 (9/12/12)
+%
+% This template has been downloaded from:
+% http://www.LaTeXTemplates.com
+%
+% Original author:
+% Xavier Danaux (xdanaux@gmail.com)
+%
+% License:
+% CC BY-NC-SA 3.0 (http://creativecommons.org/licenses/by-nc-sa/3.0/)
+%
+% Important note:
+% This template requires the moderncv.cls and .sty files to be in the same
+% directory as this .tex file. These files provide the resume style and themes
+% used for structuring the document.
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%----------------------------------------------------------------------------------------
+%   PACKAGES AND OTHER DOCUMENT CONFIGURATIONS
+%----------------------------------------------------------------------------------------
+
+\documentclass[10pt,a4paper,sans]{moderncv} % Font sizes: 10, 11, or 12; paper sizes: a4paper, letterpaper, a5paper, legalpaper, executivepaper or landscape; font families: sans or roman
+
+\moderncvstyle{classic} % CV theme - options include: 'casual' (default), 'classic', 'oldstyle' and 'banking'
+\moderncvcolor{blue} % CV color - options include: 'blue' (default), 'orange', 'green', 'red', 'purple', 'grey' and 'black'
+
+\usepackage{lipsum} % Used for inserting dummy 'Lorem ipsum' text into the template
+
+\usepackage[scale=0.85]{geometry} % Reduce document margins
+%\setlength{\hintscolumnwidth}{3cm} % Uncomment to change the width of the dates column
+%\setlength{\makecvtitlenamewidth}{10cm} % For the 'classic' style, uncomment to adjust the width of the space allocated to your name
+
+% Removes full stops from the end of cventrys
+\usepackage{xpatch}
+\xpatchcmd{\cventry}{.\strut}{\strut}{}{}
+
+\usepackage{multicol}
+
+% Page numbering. Remove this section for single page versions.
+\usepackage{lastpage}
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\rfoot{\thepage\ of \pageref{LastPage}}
+% End page numbering section
+
+%Link colouring - see http://tex.stackexchange.com/questions/55950/how-to-change-the-color-of-the-hyperlink-to-mail-address-in-moderncv-class
+\AtBeginDocument{
+    \hypersetup{colorlinks,urlcolor=color2,linkcolor=color0}
+}
+
+
+%----------------------------------------------------------------------------------------
+%   NAME AND CONTACT INFORMATION SECTION
+%----------------------------------------------------------------------------------------
+
+\firstname{Sam} % Your first name
+\familyname{Frances} % Your last name
+
+% All information in this block is optional, comment out any lines you don't need
+%\title{Curriculum Vitae}
+\address{London, UK}{}
+%\mobile{(+33) 7 86 33 40 99}
+%\phone{(000) 111 1112}
+%\fax{(000) 111 1113}
+\email{sam@samfrances.uk}
+\homepage{samfrances.co.uk}
+\social[github]{samfrances}
+\social[linkedin]{samfrances}
+%\extrainfo{}
+%\photo[70pt][0.4pt]{picture} % The first bracket is the picture height, the second is %the thickness of the frame around the picture (0pt for no frame)
+
+\quote{Self-taught web developer with solid abilities in front-end and back-end development. I enjoy pushing myself to master new languages, frameworks, design patterns and programming paradigms.}
+
+%----------------------------------------------------------------------------------------
+
+\begin{document}
+
+\makecvtitle % Print the CV title
+
+%----------------------------------------------------------------------------------------
+%   TECHNICAL SKILLS SECTION
+%----------------------------------------------------------------------------------------
+
+\section{Technical Skills}
+
+\begin{multicols}{2}
+
+    % Line between columns:
+    %\setlength{\columnsep}{1.5cm}
+    %\setlength{\columnseprule}{0.2pt}
+
+    \subsection{Languages}
+
+    \cvitem{$\star\star\star$}{Python, Javascript, HTML5, CSS3}
+    \cvitem{$\star\star$}{SQL}
+    \cvitem{$\star$}{TypeScript, Haskell, C, PHP}
+
+    \subsection{Frameworks/Libraries}
+
+    \cvitem{$\star\star\star$}{Django}
+    \cvitem{$\star\star$}{JQuery, Flask}
+    \cvitem{$\star$}{Jasmine, Google App Engine}
+    \cvitem{}{Google Cloud Endpoints}
+
+
+    \columnbreak
+
+    \subsection{Other}
+
+    \cvitem{OS}{Ubuntu Linux}
+    \cvitem{VCS}{Git/Github}
+    \cvitem{Editors}{Sublime, Vim}
+
+\end{multicols}
+
+%----------------------------------------------------------------------------------------
+%   WORK EXPERIENCE SECTION
+%----------------------------------------------------------------------------------------
+
+\section{Work Experience}
+
+\cventry{2016--Current}{Junior Front End Developer}{Cydar Ltd}{}{}{}
+
+\cventry{2010--2016}{Public Affairs Executive}{The London Internet Exchange Ltd (LINX)}{}{}{
+    \begin{itemize}
+        %\item{Representing the public policy interests of the Internet industry, especially network operators.}
+        %\item{Manage policy consultations with a membership of over 600 network operators in more than 60 countries.}
+        \item{Required a high-level understanding of Internet architecture and the TCP/IP protocol suite in order to understand and explain the impact of new policy developments on network operators.}
+    \end{itemize}
+}
+
+%----------------------------------------------------------------------------------------
+%   PROJECT EXPERIENCE SECTION
+%----------------------------------------------------------------------------------------
+
+\section{Project Experience}
+
+\cventry{April 2016}{Kalah Game API}{}{}{\href{https://github.com/samfrances/udacity-kalah}{github.com/samfrances/udacity-kalah }}{
+    \begin{itemize}
+        \item{Created an API for Kalah, a turn-based two-player ``count and capture'' board game.}
+        \item{Written in Python using Google App Engine, Cloud Endpoints and Datastore.}
+    \end{itemize}
+}
+
+\cventry{February 2016}{Catalog App}{}{}{\href{https://github.com/samfrances/udacity-item-catalog}{github.com/samfrances/udacity-item-catalog}}{
+    \begin{itemize}
+        \item{Developed a content management system using the Flask framework in Python.}
+        \item{Authentication is provided via OAuth and all data is stored within a PostgreSQL database.}
+    \end{itemize}
+}
+
+\cventry{November 2015}{Swiss Tournament}{}{}{\href{https://github.com/samfrances/udacity-swiss-system-tournament}{github.com/samfrances/udacity-swiss-system-tournament}}{
+    \begin{itemize}
+        \item{Designed and created a database for managing multiple Swiss-system tournaments simultaneously.}
+        \item{Employed advanced SQL features such as views and triggers.}
+    \end{itemize}
+}
+
+\cventry{February 2015}{Udacity Movies Website}{}{}{\href{https://github.com/samfrances/udacity-movies-website}{github.com/samfrances/udacity-movies-website}}{
+    \begin{itemize}
+        \item{Developed a single-page application to retrieve and display information from the Open Movie Database API, and combine with related trailers from Youtube.}
+        \item{Combined both front- and back-end technologies, including Python, Bootstrap, JQuery, WSGI, HTML5 and JS.}
+    \end{itemize}
+}
+
+\cventry{February 2014}{MVC todo list demo}{}{}{\href{https://github.com/samfrances/todo-mvc-demo}{github.com/samfrances/todo-mvc-demo}}{
+    \begin{itemize}
+        \item{Simple Javascript todo list application, written as an exercise in creating an MVC Javascript application, without an MVC framework.}
+    \end{itemize}
+}
+
+%----------------------------------------------------------------------------------------
+%   CERTIFICATIONS SECTION
+%----------------------------------------------------------------------------------------
+
+\section{Certifications and Professional Development}
+
+%\cventry{2016--Current}{Computer Science}{Open Source Society}{}{\href{https://www.github.com/samfrances/oss-cs}{github.com/samfrances/oss-cs}}{}
+%    \begin{itemize}
+%        \item{A sequential curriculum of free, open courses provided by universities (MIT, Harvard etc.) and MOOC providers (edX, Udacity etc.), which purports to be broadly equivalent to an undergraduate level computer science education.}
+%    \end{itemize}
+%}
+
+\cventry{2016}{Front-End Web Developer Nanodegree}{Udacity}{}{\href{https://profiles.udacity.com/u/samfrances}{profiles.udacity.com/u/samfrances}}{}
+
+\cventry{2016}{edX Computer Science}{MITx, HarvardX}{}{}{
+    \begin{itemize}
+        \item{MITx: 6.00.1x Introduction to Computer Science and Programming Using Python, \href{https://git.io/vK7kh}{git.io/vK7kh}}
+        \item{HarvardX: CS50x Introduction to Computer Science (ongoing), \href{https://git.io/vK7Ic}{git.io/vK7Ic}}
+    \end{itemize}
+}
+
+\cventry{2015--2016}{Full Stack Web Developer Nanodegree}{Udacity}{}{\href{https://profiles.udacity.com/u/samfrances}{profiles.udacity.com/u/samfrances}}{}
+%    \begin{itemize}
+%        \item{As part of this project-based course, co-created by Amazon Web Services, Github, AT\&T and Google,
+%        I have developed complex relational databases, secured and configured
+%        Linux-based servers, and built complete web applications using Python, HTML, CSS, JavaScript and SQL.}
+%    \end{itemize}
+%}
+
+\cventry{2015}{LINX Accredited Internet Technician 1}{Systems \& Network Training}{}{}{}
+%    \begin{itemize}
+%        \item{An intensive, week-long foundational network engineering course, focussing on the theory of TCP/IP, with hands-on sessions to reinforce theoretical knowledge. I achieved 90\% in the final exam for this course.}
+%    \end{itemize}
+%}
+
+\cventry{2012--2013}{Udacity computer science certificates}{Udacity}{}{}{
+    \begin{itemize}
+        \item{CS101 Introduction To Computer Science, \href{https://git.io/vK7OQ}{git.io/vK7OQ}}
+        \item{CS253 Web Development, \href{https://git.io/vK7Op}{git.io/vK7Op}}
+        \item{CS255 HTML5 Game Development, \href{https://git.io/vK73T}{git.io/vK73T}}
+        \item{CS262 Programming Languages, \href{https://git.io/vK73Y}{git.io/vK73Y}}
+    \end{itemize}
+}
+
+%----------------------------------------------------------------------------------------
+%   EDUCATION SECTION
+%----------------------------------------------------------------------------------------
+
+\section{Education}
+
+\cventry{2009--2010}{M. A. Linguistics}{University College London}{}{}{}
+
+\cventry{2006--2009}{B. A. Philosophy}{King's College London}{}{First Class Honours}{}
+
+
+\end{document}

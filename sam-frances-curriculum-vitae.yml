@@ -1,0 +1,206 @@
+name:
+  firstname: Sam
+  surname: Frances
+location: Cambridge, UK
+email: sam@samfrances.uk
+
+links:
+  - name: homepage
+    url: "http://www.samfrances.co.uk"
+    text: samfrances.co.uk
+  - name: github
+    url: "http://www.github.com/samfrances"
+    text: github.com/samfrances
+  - name: linkedin
+    url: "http://www.linkedin.com/in/samfrances"
+    text: linkedin.com/in/samfrances
+
+
+statement: >
+  Self-taught web developer with solid abilities in front-end and
+  back-end development. I enjoy pushing myself to master new
+  languages, frameworks, design patterns and programming paradigms.
+
+
+skills:
+  languages:
+    most_experience:
+      - Python
+      - Javascript
+      - HTML5
+      - CSS3
+    some_experience:
+      - SQL
+    dabbled:
+      - TypeScript
+      - Haskell
+      - C
+      - PHP
+  frameworks:
+    most_experience:
+      - Django
+    some_experience:
+      - JQuery
+      - Flask
+    dabbled:
+      - Jasmine
+      - Knockout
+      - Google App Engine
+      - Google Cloud Endpoints
+  other:
+    os:
+      - Ubuntu Linux
+    vcs:
+      - Git/Github
+    editors:
+      - Sublime
+      - Vim
+
+work_experience:
+  - start: "2016"
+    end: current
+    title: Junior Front End Developer
+    company: Cydar Ltd
+  - start: "2010"
+    end: "2016"
+    title: Public Affairs Executive
+    company: The London Internet Exchange Ltd (LINX)
+    description:
+      - >
+        Required a high-level understanding of Internet architecture
+        and the TCP/IP protocol suite in order to understand and
+        explain the impact of new policy developments on network
+        operators.
+
+project_experience:
+
+  - completed: April 2016
+    title: Kalah Game API
+    link:
+      url: "http://www.github.com/samfrances/udacity-kalah"
+      text: github.com/samfrances/udacity-kalah
+    description:
+      - >
+        Created an API for Kalah, a turn-based two-player “count and
+        capture” board game.
+      - >
+        Written in Python using Google App Engine, Cloud Endpoints and
+        Datastore.
+
+  - completed: February 2016
+    title: Catalog App
+    link:
+      url: "http://github.com/samfrances/udacity-item-catalog"
+      text: github.com/samfrances/udacity-item-catalog
+    description:
+      - >
+        Developed a content management system using the Flask
+        framework in Python.
+      - >
+        Authentication is provided via OAuth and all data is stored
+        within a PostgreSQL database.
+
+  - completed: November 2015
+    title: Swiss Tournament
+    link:
+      url: "http://www.github.com/samfrances/udacity-swiss-system-tournament"
+      text: github.com/samfrances/udacity-swiss-system-tournament
+    description:
+      - >
+        Designed and created a database for managing multiple Swiss-system
+        tournaments simultaneously.
+      - Employed advanced SQL features such as views and triggers.
+
+  - completed: February 2015
+    title: Udacity Movies Website
+    link:
+      url: "http://www.github.com/samfrances/udacity-movies-website"
+      text: github.com/samfrances/udacity-movies-website
+    description:
+      - >
+        Developed a single-page application to retrieve and display information
+        from the Open Movie Database API, and combine with related trailers
+        from Youtube.
+      - >
+        Combined both front- and back-end technologies, including Python,
+        Bootstrap, JQuery, WSGI, HTML5 and Javascript.
+
+  - completed: February 2014
+    title: MVC todo list demo
+    link:
+      url: "http://www.github.com/samfrances/todo-mvc-demo"
+      text: github.com/samfrances/todo-mvc-demo
+    description:
+      - >
+        Simple Javascript todo list application, written as an exercise in
+        creating an MVC Javascript application, without an MVC framework.
+
+certifications:
+
+  - started: "2016"
+    completed: "2016"
+    title: Front-End Web Developer Nanodegree
+    provider: Udacity
+    link:
+      url: "https://profiles.udacity.com/u/samfrances"
+      text: profiles.udacity.com/u/samfrances
+
+  - started: "2016"
+    completed: "2016"
+    title: edX Computer Science
+    provider: MITx, HarvardX
+    modules:
+      - title: "MITx: 6.00.1x Introduction to Computer Science and Programming Using Python"
+        link:
+          url: "https://git.io/vK7kh"
+          text: git.io/vK7kh
+      - title: "HarvardX: CS50x Introduction to Computer Science (ongoing)"
+        link:
+          url: "https://git.io/vK7Ic"
+          text: git.io/vK7Ic
+
+  - started: "2015"
+    completed: "2016"
+    title: Full Stack Web Developer Nanodegree
+    provider: Udacity
+    link:
+      url: "https://profiles.udacity.com/u/samfrances"
+      text: profiles.udacity.com/u/samfrances
+
+  - started: "2015"
+    completed: "2015"
+    title: LINX Accredited Internet Technician 1
+    provider: Systems \& Network Training
+
+  - started: "2012"
+    completed: "2013"
+    title: Udacity computer science certificates
+    provider: Udacity
+    modules:
+      - title: CS101 Introduction To Computer Science
+        link:
+          url: "https://git.io/vK7OQ"
+          text: git.io/vK7OQ
+      - title: CS253 Web Development
+        link:
+          url: "https://git.io/vK7Op"
+          text: git.io/vK7Op
+      - title: CS255 HTML5 Game Development
+        link:
+          url: "https://git.io/vK73T"
+          text: git.io/vK73T
+      - title: CS262 Programming Languages
+        link:
+          url: "https://git.io/vK73Y"
+          text: git.io/vK73Y
+
+education:
+  - start: "2009"
+    end: "2010"
+    degree: M. A. Linguistics
+    university: University College London
+  - start: "2006"
+    end: "2009"
+    degree: B. A. Philosophy
+    university: King's College London
+    grade: First Class Honours

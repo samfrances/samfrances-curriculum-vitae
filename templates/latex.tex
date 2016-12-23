@@ -1,0 +1,206 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% "ModernCV" CV and Cover Letter
+% LaTeX Template
+% Version 1.1 (9/12/12)
+%
+% This template has been downloaded from:
+% http://www.LaTeXTemplates.com
+%
+% Original author:
+% Xavier Danaux (xdanaux@gmail.com)
+%
+% License:
+% CC BY-NC-SA 3.0 (http://creativecommons.org/licenses/by-nc-sa/3.0/)
+%
+% Important note:
+% This template requires the moderncv.cls and .sty files to be in the same
+% directory as this .tex file. These files provide the resume style and themes
+% used for structuring the document.
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%----------------------------------------------------------------------------------------
+%   PACKAGES AND OTHER DOCUMENT CONFIGURATIONS
+%----------------------------------------------------------------------------------------
+
+\documentclass[10pt,a4paper,sans]{moderncv} % Font sizes: 10, 11, or 12; paper sizes: a4paper, letterpaper, a5paper, legalpaper, executivepaper or landscape; font families: sans or roman
+
+\moderncvstyle{classic} % CV theme - options include: 'casual' (default), 'classic', 'oldstyle' and 'banking'
+\moderncvcolor{blue} % CV color - options include: 'blue' (default), 'orange', 'green', 'red', 'purple', 'grey' and 'black'
+
+\usepackage{lipsum} % Used for inserting dummy 'Lorem ipsum' text into the template
+
+\usepackage[scale=0.85]{geometry} % Reduce document margins
+%\setlength{\hintscolumnwidth}{3cm} % Uncomment to change the width of the dates column
+%\setlength{\makecvtitlenamewidth}{10cm} % For the 'classic' style, uncomment to adjust the width of the space allocated to your name
+
+% Removes full stops from the end of cventrys
+\usepackage{xpatch}
+\xpatchcmd{\cventry}{.\strut}{\strut}{}{}
+
+\usepackage{multicol}
+
+% Page numbering. Remove this section for single page versions.
+\usepackage{lastpage}
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\rfoot{\thepage\ of \pageref{LastPage}}
+% End page numbering section
+
+%Link colouring - see http://tex.stackexchange.com/questions/55950/how-to-change-the-color-of-the-hyperlink-to-mail-address-in-moderncv-class
+\AtBeginDocument{
+    \hypersetup{colorlinks,urlcolor=color2,linkcolor=color0}
+}
+
+
+%----------------------------------------------------------------------------------------
+%   NAME AND CONTACT INFORMATION SECTION
+%----------------------------------------------------------------------------------------
+
+\firstname{\VAR{ name.firstname }} % Your first name
+\familyname{\VAR{ name.surname }} % Your last name
+
+% All information in this block is optional, comment out any lines you don't need
+%\title{Curriculum Vitae}
+\address{\VAR{ location }}{}
+%\mobile{(+33) 7 86 33 40 99}
+%\phone{(000) 111 1112}
+%\fax{(000) 111 1113}
+\email{\VAR{ email }}
+\BLOCK{ for link in links }
+\BLOCK{ if link.name == "homepage" }\homepage{\VAR{ link.text }}
+\BLOCK{ endif }
+\social[\VAR{ link.name }]{samfrances}
+\BLOCK{ endfor }
+%\extrainfo{}
+%\photo[70pt][0.4pt]{picture} % The first bracket is the picture height, the second is %the thickness of the frame around the picture (0pt for no frame)
+
+\quote{\VAR{ statement|trim }}
+
+%----------------------------------------------------------------------------------------
+
+\begin{document}
+
+\makecvtitle % Print the CV title
+
+%----------------------------------------------------------------------------------------
+%   TECHNICAL SKILLS SECTION
+%----------------------------------------------------------------------------------------
+
+\section{Technical Skills}
+
+\BLOCK{ macro wrapped_skills(skills_list, linelen) -}
+    \VAR{skills_list | join(", ") | wordwrap(linelen, false, wrapstring='}\n    \cvitem{}{') }
+\BLOCK{- endmacro }
+
+\BLOCK{ with linelen = 35 }
+\begin{multicols}{2}
+
+    % Line between columns:
+    %\setlength{\columnsep}{1.5cm}
+    %\setlength{\columnseprule}{0.2pt}
+
+    \subsection{Languages}
+    \BLOCK{ with lang = skills.languages }
+    \cvitem{$\star\star\star$}{\VAR{ wrapped_skills(lang.most_experience, linelen) }}
+    \cvitem{$\star\star$}{\VAR{ wrapped_skills(lang.some_experience, linelen) }}
+    \cvitem{$\star$}{\VAR{ wrapped_skills(lang.dabbled, linelen) }}
+    \BLOCK{ endwith }
+
+    \subsection{Frameworks/Libraries}
+
+    \BLOCK{ with fr = skills.frameworks }
+    \cvitem{$\star\star\star$}{\VAR{ wrapped_skills(fr.most_experience, linelen) }}
+    \cvitem{$\star\star$}{\VAR{ wrapped_skills(fr.some_experience, linelen) }}
+    \cvitem{$\star$}{\VAR{ wrapped_skills(fr.dabbled, linelen) }}
+    \BLOCK{ endwith }
+
+
+    \columnbreak
+
+    \subsection{Other}
+
+    \BLOCK{ with other = skills.other }
+    \cvitem{OS}{\VAR{ wrapped_skills(other.os, linelen) }}
+    \cvitem{VCS}{\VAR{ wrapped_skills(other.vcs, linelen) }}
+    \cvitem{Editors}{\VAR{ wrapped_skills(other.editors, linelen) }}
+    \BLOCK{ endwith }
+
+\end{multicols}
+\BLOCK{ endwith }
+
+%----------------------------------------------------------------------------------------
+%   WORK EXPERIENCE SECTION
+%----------------------------------------------------------------------------------------
+
+\section{Work Experience}
+
+\BLOCK{ for job in work_experience }
+\cventry{\VAR{ job.start }--\VAR{ job.end }}{\VAR{ job.title }}{\VAR{ job.company }}{}{}{\BLOCK{ if job.description is defined }
+
+    \begin{itemize}
+    \BLOCK{ for bullet in job.description }
+        \item{\VAR{ bullet|trim }}
+    \BLOCK{ endfor }
+    \end{itemize}
+  \BLOCK{ endif }
+}
+\BLOCK{ endfor }
+
+
+%----------------------------------------------------------------------------------------
+%   PROJECT EXPERIENCE SECTION
+%----------------------------------------------------------------------------------------
+
+\section{Project Experience}
+
+\BLOCK{ for proj in project_experience }
+\cventry{ \VAR{ proj.completed } }
+    { \VAR{ proj.title }}{}{}
+    {\href{ \VAR{ proj.link.url } }{ \VAR{ proj.link.text } }}
+    {\BLOCK{ if proj.description is defined }
+        \begin{itemize}
+            \BLOCK{ for bullet in proj.description }
+            \item{\VAR{ bullet|trim }}
+            \BLOCK{ endfor }
+        \end{itemize}
+        \BLOCK{ endif }}
+\BLOCK{ endfor }
+
+
+%----------------------------------------------------------------------------------------
+%   CERTIFICATIONS SECTION
+%----------------------------------------------------------------------------------------
+
+\section{Certifications and Professional Development}
+
+\BLOCK{ for cert in certifications }
+\cventry{ \VAR{ cert.started }\BLOCK{ if cert.completed is not equalto cert.started } -- \VAR{ cert.completed }\BLOCK{ endif } }
+    {\VAR{ cert.title }}
+    {\VAR{ cert.provider }}{}
+    {\BLOCK{ if cert.link is defined } \href{ \VAR{ cert.link.url } }{ \VAR{ cert.link.text } } \BLOCK{ endif }}
+    {\BLOCK{ if cert.modules is defined }
+        \begin{itemize}
+            \BLOCK{ for mod in cert.modules }
+            \item{ \VAR{ mod.title }, \href{ \VAR{ mod.link.url } }{ \VAR{ mod.link.text } } }
+            \BLOCK{ endfor }
+        \end{itemize}
+    \BLOCK{ endif }}
+
+\BLOCK{ endfor }
+
+%----------------------------------------------------------------------------------------
+%   EDUCATION SECTION
+%----------------------------------------------------------------------------------------
+
+\section{Education}
+
+\BLOCK{ for ed in education }
+\cventry{ \VAR{ ed.start }--\VAR{ ed.end } }
+    { \VAR{ ed.degree }}
+    { \VAR{ ed.university } }{}{}{}
+
+\BLOCK{ endfor }
+
+
+\end{document}
