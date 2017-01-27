@@ -32,7 +32,7 @@ Technical Skills
       <td><strong>Frameworks/Libraries</strong></td>
       <td>Django</td>
       <td>JQuery, Flask</td>
-      <td>Jasmine, Knockout, Google App Engine, Google Cloud Endpoints</td>
+      <td>Ansible, Jasmine, Knockout, Google App Engine, Google Cloud Endpoints</td>
     </tr>
     <tr>
       <td><strong>Other</strong></td>
@@ -72,7 +72,7 @@ Certifications and Professional Development
 - 2016: **Front-End Web Developer Nanodegree**, *Udacity*, [profiles.udacity.com/u/samfrances](https://profiles.udacity.com/u/samfrances)
 - 2016: **edX Computer Science**, *MITx, HarvardX*
   + MITx: 6.00.1x Introduction to Computer Science and Programming Using Python, [git.io/vK7kh](https://git.io/vK7kh)
-  + HarvardX: CS50x Introduction to Computer Science (ongoing), [git.io/vK7Ic](https://git.io/vK7Ic)
+  + HarvardX: CS50x Introduction to Computer Science, [git.io/vK7Ic](https://git.io/vK7Ic)
 - 2015 - 2016: **Full Stack Web Developer Nanodegree**, *Udacity*, [profiles.udacity.com/u/samfrances](https://profiles.udacity.com/u/samfrances)
 - 2015: **LINX Accredited Internet Technician 1**, *Systems \& Network Training*
 - 2012 - 2013: **Udacity computer science certificates**, *Udacity*

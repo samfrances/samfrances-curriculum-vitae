@@ -43,6 +43,7 @@ skills:
       - JQuery
       - Flask
     dabbled:
+      - Ansible
       - Jasmine
       - Knockout
       - Google App Engine
@@ -154,7 +155,7 @@ certifications:
         link:
           url: "https://git.io/vK7kh"
           text: git.io/vK7kh
-      - title: "HarvardX: CS50x Introduction to Computer Science (ongoing)"
+      - title: "HarvardX: CS50x Introduction to Computer Science"
         link:
           url: "https://git.io/vK7Ic"
           text: git.io/vK7Ic

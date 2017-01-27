@@ -66,7 +66,7 @@ jenv_default = Environment(
 )
 # filter for talking a sequence of sequences and returning the concatenation
 # of those sequences
-jenv_markdown.filters['concat'] = lambda sequences: reduce(lambda x, y: x+y, sequences)
+jenv_default.filters['concat'] = lambda sequences: reduce(lambda x, y: x+y, sequences)
 
 # Choose jinja environment based on file extension
 extension = os.path.splitext(template_name)[1]
