@@ -30,9 +30,10 @@ skills:
       - HTML5
       - CSS3
     some_experience:
+      - TypeScript
       - SQL
     dabbled:
-      - TypeScript
+      - Go
       - Haskell
       - C
       - PHP
@@ -40,9 +41,14 @@ skills:
     most_experience:
       - Django
     some_experience:
+      - React
+      - Jest
       - JQuery
       - Flask
+      - Tornado
+      - Celery
     dabbled:
+      - Aiohttp
       - Ansible
       - Jasmine
       - Knockout

@@ -25,14 +25,14 @@ Technical Skills
     <tr>
       <td><strong>Languages</strong></td>
       <td>Python, Javascript, HTML5, CSS3</td>
-      <td>SQL</td>
-      <td>TypeScript, Haskell, C, PHP</td>
+      <td>TypeScript, SQL</td>
+      <td>Go, Haskell, C, PHP</td>
     </tr>
     <tr>
       <td><strong>Frameworks/Libraries</strong></td>
       <td>Django</td>
-      <td>JQuery, Flask</td>
-      <td>Ansible, Jasmine, Knockout, Google App Engine, Google Cloud Endpoints</td>
+      <td>JQuery, Flask, Tornado</td>
+      <td>Aiohttp, Ansible, Jasmine, Knockout, Google App Engine, Google Cloud Endpoints</td>
     </tr>
     <tr>
       <td><strong>Other</strong></td>
