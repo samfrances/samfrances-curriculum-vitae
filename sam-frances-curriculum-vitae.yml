@@ -17,8 +17,8 @@ links:
 
 
 statement: >
-  Self-taught web developer with solid abilities in front-end and
-  back-end development. I enjoy pushing myself to master new
+  Experienced software engineer with with solid abilities in frontend and
+  backend web development. I enjoy pushing myself to master new
   languages, frameworks, design patterns and programming paradigms.
 
 
@@ -26,26 +26,33 @@ skills:
   languages:
     most_experience:
       - Python
+      - TypeScript
       - Javascript
+      - TypeScript
       - HTML5
       - CSS3
     some_experience:
       - TypeScript
       - SQL
+      - C++
     dabbled:
       - Go
       - Haskell
       - C
-      - PHP
+      - Erlang
+      - Elixir
   frameworks:
     most_experience:
       - Django
+      - Django REST Framework
+      - Tornado
+      - Redux
     some_experience:
+      - Qt
       - React
       - Jest
       - JQuery
       - Flask
-      - Tornado
       - Celery
     dabbled:
       - Aiohttp
@@ -54,32 +61,109 @@ skills:
       - Knockout
       - Google App Engine
       - Google Cloud Endpoints
+  databases:
+    most_experience:
+      - Redis
+    some_experience:
+      - SQLite
+    dabbled:
+      - RabbitMQ
+      - MongoDB
   other:
     os:
       - Ubuntu Linux
     vcs:
       - Git/Github
     editors:
+      - VSCode
       - Sublime
       - Vim
 
 work_experience:
+  - start: "2021"
+    end: "current"
+    title: Senior Software Engineer
+    company: Cydar Medical
+    tags:
+      - onepage
+  - start: "2017"
+    end: "2020"
+    title: Front End Software Developer
+    company: Cydar Medical
+    tags:
+      - onepage
+    description:
+      - >
+        Member of development team for a growing medical SaaS company,
+        providing cloud-based fusion imaging for surgical guidance.
+      - >
+        Created front-end of a project to allow clinicians make adjustments
+        to aorta overlays during endovascular procedures.
+        Implemented using Redux, Typescript, Jest and Python.
+      - >
+        Assisted with the design of an overhaul of Cydar's internal
+        content-addressable storage service. Prototyped a "shared streams"
+        mechanism allow more efficient downloads when multiple clients
+        access the same files concurrently, using Python, Asyncio,
+        Aiohttp and Boto.
+      - >
+        Worked on front-end and API endpoints for "Dynamic Morphology Correction"
+        feature, using Typescript, Three.js, Python, Tornado and JSON-Schema.
+      - >
+        Led development of a cloud-based solution for presenting native 3D
+        accelerated software in the browser.
+      - >
+        Architected and managed the rewrite of a microservice to
+        orchestrate scaling of large pools of EC2 GPU workers, including a
+        web-based control GUI, an improved incremental scale-down system, and
+        greater reliability.
   - start: "2016"
-    end: current
+    end: "2017"
     title: Junior Front End Developer
-    company: Cydar Ltd
+    company: Cydar Medical
+    tags:
+      - onepage
   - start: "2010"
     end: "2016"
     title: Public Affairs Executive
     company: The London Internet Exchange Ltd (LINX)
-    description:
-      - >
-        Required a high-level understanding of Internet architecture
-        and the TCP/IP protocol suite in order to understand and
-        explain the impact of new policy developments on network
-        operators.
 
 project_experience:
+
+  - completed: February 2019
+    title: Rejection App
+    link:
+      url: "https://github.com/samfrances/rejection"
+      text: github.com/samfrances/rejection
+    description:
+      - >
+        Frontend application built in TypeScript and React, and using the
+        useState and useReducer hooks.
+    tags:
+      - onepage
+
+  - completed: February 2019
+    title: C++ Two-Player Snake Clone
+    link:
+      url: "https://github.com/samfrances/CppND-Capstone-Snake-Game"
+      text: github.com/samfrances/CppND-Capstone-Snake-Game
+    description:
+      - An SDL-based two-player snake clone, developed using modern C++ techniques.
+    tags:
+      - onepage
+
+  - completed: November 2019
+    title: C++ System Monitor App
+    link:
+      url: "https://github.com/samfrances/CppND-System-Monitor-Project-Updated"
+      text: github.com/samfrances/CppND-System-Monitor-Project-Updated
+    description:
+      - >
+        A simplified htop clone for monitoring a linux operating system.
+      - >
+        Developed in a test-driven manner using GoogleTest and GoogleMock.
+    tags:
+      - onepage
 
   - completed: April 2016
     title: Kalah Game API
@@ -88,11 +172,13 @@ project_experience:
       text: github.com/samfrances/udacity-kalah
     description:
       - >
-        Created an API for Kalah, a turn-based two-player “count and
-        capture” board game.
+        Created an API for Kalah, a turn-based two-player "count and
+        capture" board game.
       - >
         Written in Python using Google App Engine, Cloud Endpoints and
         Datastore.
+    tags:
+      - onepage
 
   - completed: February 2016
     title: Catalog App
@@ -125,12 +211,14 @@ project_experience:
       text: github.com/samfrances/udacity-movies-website
     description:
       - >
-        Developed a single-page application to retrieve and display information
-        from the Open Movie Database API, and combine with related trailers
+        Single-page app to display information
+        from the OMDb API, and combine with related trailers
         from Youtube.
       - >
         Combined both front- and back-end technologies, including Python,
-        Bootstrap, JQuery, WSGI, HTML5 and Javascript.
+        Bootstrap, JQuery, WSGI, HTML5.
+    tags:
+      - onepage
 
   - completed: February 2014
     title: MVC todo list demo
@@ -144,40 +232,85 @@ project_experience:
 
 certifications:
 
+  - started: "2019"
+    completed: "current"
+    title: Software Development Micromasters
+    provider: Edx, UBCx
+    modules:
+      - title: "UBCx: How to Code - Simple Data"
+        link:
+          url: https://courses.edx.org/certificates/889346c63c2741d698ebc739811d0e5b
+          text: courses.edx.org/certificates/889346c63c2741d698ebc739811d0e5b
+
+  - started: "2016"
+    completed: "current"
+    title: Computational Thinking using Python XSeries
+    provider: Edx, MITx
+    modules:
+      - title: "MITx: 6.00.1x Introduction to Computer Science and Programming Using Python"
+        link:
+          url: https://git.io/vK7kh
+          text: git.io/vK7kh
+
+  - started: "2019"
+    completed: "2020"
+    title: C++ Nanodegree
+    provider: Udacity
+    link:
+      url: "https://confirm.udacity.com/7DDGS6J2"
+      text: confirm.udacity.com/7DDGS6J2
+    tags:
+      - onepage
+
+  - started: "2018"
+    completed: "2018"
+    title: JavaScript Foundations
+    provider: DevAnywhere.io
+    link:
+      url: "https://www.credential.net/a796d867-1324-4698-bdb1-9f678cff402b"
+      text: credential.net/a796d867-1324-4698-bdb1-9f678cff402b
+    tags:
+      - onepage
+
   - started: "2016"
     completed: "2016"
     title: Front-End Web Developer Nanodegree
     provider: Udacity
     link:
-      url: "https://profiles.udacity.com/u/samfrances"
-      text: profiles.udacity.com/u/samfrances
+      url: "https://confirm.udacity.com/QJCGFPED"
+      text: confirm.udacity.com/QJCGFPED
+    tags:
+      - onepage
+
 
   - started: "2016"
     completed: "2016"
     title: edX Computer Science
-    provider: MITx, HarvardX
+    provider: HarvardX
     modules:
-      - title: "MITx: 6.00.1x Introduction to Computer Science and Programming Using Python"
+      - title: "CS50x Introduction to Computer Science"
         link:
-          url: "https://git.io/vK7kh"
-          text: git.io/vK7kh
-      - title: "HarvardX: CS50x Introduction to Computer Science"
-        link:
-          url: "https://git.io/vK7Ic"
-          text: git.io/vK7Ic
+          url: "https://courses.edx.org/certificates/13223d0945a24197a00f9ee0b92ba76f"
+          text: courses.edx.org/certificates/13223d0945a24197a00f9ee0b92ba76f
+    tags:
+      - onepage
 
   - started: "2015"
     completed: "2016"
     title: Full Stack Web Developer Nanodegree
     provider: Udacity
     link:
-      url: "https://profiles.udacity.com/u/samfrances"
-      text: profiles.udacity.com/u/samfrances
+      url: "https://confirm.udacity.com/XD5UH24D"
+      text: confirm.udacity.com/XD5UH24D
+    tags:
+      - onepage
 
   - started: "2015"
     completed: "2015"
     title: LINX Accredited Internet Technician 1
     provider: Systems \& Network Training
+    tags:
+      - onepage
 
   - started: "2012"
     completed: "2013"

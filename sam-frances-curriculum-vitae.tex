@@ -74,7 +74,7 @@
 %\extrainfo{}
 %\photo[70pt][0.4pt]{picture} % The first bracket is the picture height, the second is %the thickness of the frame around the picture (0pt for no frame)
 
-\quote{Self-taught web developer with solid abilities in front-end and back-end development. I enjoy pushing myself to master new languages, frameworks, design patterns and programming paradigms.}
+\quote{Experienced software engineer with with solid abilities in frontend and backend web development. I enjoy pushing myself to master new languages, frameworks, design patterns and programming paradigms.}
 
 %----------------------------------------------------------------------------------------
 
@@ -96,14 +96,17 @@
     %\setlength{\columnseprule}{0.2pt}
 
     \subsection{Languages}
-    \cvitem{$\star\star\star$}{Python, Javascript, HTML5, CSS3}
-    \cvitem{$\star\star$}{TypeScript, SQL}
-    \cvitem{$\star$}{Go, Haskell, C, PHP}
+    \cvitem{$\star\star\star$}{Python, TypeScript, Javascript,}
+    \cvitem{}{TypeScript, HTML5, CSS3}
+    \cvitem{$\star\star$}{SQL, C++}
+    \cvitem{$\star$}{Go, Haskell, C, Erlang, Elixir}
 
-    \subsection{Frameworks/Libraries}
+    \subsection{Frameworks and libraries}
 
-    \cvitem{$\star\star\star$}{Django}
-    \cvitem{$\star\star$}{JQuery, Flask, Tornado}
+    \cvitem{$\star\star\star$}{Django, Django REST Framework,}
+    \cvitem{}{Tornado, Redux}
+    \cvitem{$\star\star$}{Qt, React, Jest, JQuery, Flask,}
+    \cvitem{}{Celery}
     \cvitem{$\star$}{Aiohttp, Ansible, Jasmine,}
     \cvitem{}{Knockout, Google App Engine, Google}
     \cvitem{}{Cloud Endpoints}
@@ -111,11 +114,17 @@
 
     \columnbreak
 
+    \subsection{Databases, caches, brokers etc.}
+
+    \cvitem{$\star\star\star$}{Redis}
+    \cvitem{$\star\star$}{SQLite}
+    \cvitem{$\star$}{RabbitMQ, MongoDB}
+
     \subsection{Other}
 
     \cvitem{OS}{Ubuntu Linux}
     \cvitem{VCS}{Git/Github}
-    \cvitem{Editors}{Sublime, Vim}
+    \cvitem{Editors}{VSCode, Sublime, Vim}
 
 \end{multicols}
 
@@ -125,25 +134,54 @@
 
 \section{Work Experience}
 
-\cventry{2016--current}{Junior Front End Developer}{Cydar Ltd}{}{}{}
-\cventry{2010--2016}{Public Affairs Executive}{The London Internet Exchange Ltd (LINX)}{}{}{
+\cventry{2021--current}{Senior Software Engineer}{Cydar Medical}{}{}{}
+\cventry{2017--2020}{Front End Software Developer}{Cydar Medical}{}{}{
     \begin{itemize}
-        \item{Required a high-level understanding of Internet architecture and the TCP/IP protocol suite in order to understand and explain the impact of new policy developments on network operators.}
+        \item{Member of development team for a growing medical SaaS company, providing cloud-based fusion imaging for surgical guidance.}
+        \item{Created front-end of a project to allow clinicians make adjustments to aorta overlays during endovascular procedures. Implemented using Redux, Typescript, Jest and Python.}
+        \item{Assisted with the design of an overhaul of Cydar's internal content-addressable storage service. Prototyped a "shared streams" mechanism allow more efficient downloads when multiple clients access the same files concurrently, using Python, Asyncio, Aiohttp and Boto.}
+        \item{Worked on front-end and API endpoints for "Dynamic Morphology Correction" feature, using Typescript, Three.js, Python, Tornado and JSON-Schema.}
+        \item{Led development of a cloud-based solution for presenting native 3D accelerated software in the browser.}
+        \item{Architected and managed the rewrite of a microservice to orchestrate scaling of large pools of EC2 GPU workers, including a web-based control GUI, an improved incremental scale-down system, and greater reliability.}
     \end{itemize}
 }
+\cventry{2016--2017}{Junior Front End Developer}{Cydar Medical}{}{}{}
+\cventry{2010--2016}{Public Affairs Executive}{The London Internet Exchange Ltd (LINX)}{}{}{}
 
 
 %----------------------------------------------------------------------------------------
 %   PROJECT EXPERIENCE SECTION
 %----------------------------------------------------------------------------------------
 
-\section{Project Experience}
+\section{Side Projects}
 
+\cventry{ February 2019 }
+    { Rejection App}{}{}
+    {\href{ https://github.com/samfrances/rejection }{ github.com/samfrances/rejection }}
+    {        \begin{itemize}
+            \item{Frontend application built in TypeScript and React, and using the useState and useReducer hooks.}
+        \end{itemize}
+}
+\cventry{ February 2019 }
+    { C++ Two-Player Snake Clone}{}{}
+    {\href{ https://github.com/samfrances/CppND-Capstone-Snake-Game }{ github.com/samfrances/CppND-Capstone-Snake-Game }}
+    {        \begin{itemize}
+            \item{An SDL-based two-player snake clone, developed using modern C++ techniques.}
+        \end{itemize}
+}
+\cventry{ November 2019 }
+    { C++ System Monitor App}{}{}
+    {\href{ https://github.com/samfrances/CppND-System-Monitor-Project-Updated }{ github.com/samfrances/CppND-System-Monitor-Project-Updated }}
+    {        \begin{itemize}
+            \item{A simplified htop clone for monitoring a linux operating system.}
+            \item{Developed in a test-driven manner using GoogleTest and GoogleMock.}
+        \end{itemize}
+}
 \cventry{ April 2016 }
     { Kalah Game API}{}{}
     {\href{ http://www.github.com/samfrances/udacity-kalah }{ github.com/samfrances/udacity-kalah }}
     {        \begin{itemize}
-            \item{Created an API for Kalah, a turn-based two-player “count and capture” board game.}
+            \item{Created an API for Kalah, a turn-based two-player "count and capture" board game.}
             \item{Written in Python using Google App Engine, Cloud Endpoints and Datastore.}
         \end{itemize}
 }
@@ -167,8 +205,8 @@
     { Udacity Movies Website}{}{}
     {\href{ http://www.github.com/samfrances/udacity-movies-website }{ github.com/samfrances/udacity-movies-website }}
     {        \begin{itemize}
-            \item{Developed a single-page application to retrieve and display information from the Open Movie Database API, and combine with related trailers from Youtube.}
-            \item{Combined both front- and back-end technologies, including Python, Bootstrap, JQuery, WSGI, HTML5 and Javascript.}
+            \item{Single-page app to display information from the OMDb API, and combine with related trailers from Youtube.}
+            \item{Combined both front- and back-end technologies, including Python, Bootstrap, JQuery, WSGI, HTML5.}
         \end{itemize}
 }
 \cventry{ February 2014 }
@@ -186,26 +224,55 @@
 
 \section{Certifications and Professional Development}
 
+\cventry{ 2019--current }
+    {Software Development Micromasters}
+    {Edx, UBCx}{}
+    {}
+    {        \begin{itemize}
+            \item{ UBCx: How to Code - Simple Data, \href{ https://courses.edx.org/certificates/889346c63c2741d698ebc739811d0e5b }{ courses.edx.org/certificates/889346c63c2741d698ebc739811d0e5b } }
+        \end{itemize}
+}
+
+\cventry{ 2016--current }
+    {Computational Thinking using Python XSeries}
+    {Edx, MITx}{}
+    {}
+    {        \begin{itemize}
+            \item{ MITx: 6.00.1x Introduction to Computer Science and Programming Using Python, \href{ https://git.io/vK7kh }{ git.io/vK7kh } }
+        \end{itemize}
+}
+
+\cventry{ 2019--2020 }
+    {C++ Nanodegree}
+    {Udacity}{}
+    { \href{ https://confirm.udacity.com/7DDGS6J2 }{ confirm.udacity.com/7DDGS6J2 } }
+    {}
+
+\cventry{ 2018 }
+    {JavaScript Foundations}
+    {DevAnywhere.io}{}
+    { \href{ https://www.credential.net/a796d867-1324-4698-bdb1-9f678cff402b }{ credential.net/a796d867-1324-4698-bdb1-9f678cff402b } }
+    {}
+
 \cventry{ 2016 }
     {Front-End Web Developer Nanodegree}
     {Udacity}{}
-    { \href{ https://profiles.udacity.com/u/samfrances }{ profiles.udacity.com/u/samfrances } }
+    { \href{ https://confirm.udacity.com/QJCGFPED }{ confirm.udacity.com/QJCGFPED } }
     {}
 
 \cventry{ 2016 }
     {edX Computer Science}
-    {MITx, HarvardX}{}
+    {HarvardX}{}
     {}
     {        \begin{itemize}
-            \item{ MITx: 6.00.1x Introduction to Computer Science and Programming Using Python, \href{ https://git.io/vK7kh }{ git.io/vK7kh } }
-            \item{ HarvardX: CS50x Introduction to Computer Science, \href{ https://git.io/vK7Ic }{ git.io/vK7Ic } }
+            \item{ CS50x Introduction to Computer Science, \href{ https://courses.edx.org/certificates/13223d0945a24197a00f9ee0b92ba76f }{ courses.edx.org/certificates/13223d0945a24197a00f9ee0b92ba76f } }
         \end{itemize}
 }
 
-\cventry{ 2015 -- 2016 }
+\cventry{ 2015--2016 }
     {Full Stack Web Developer Nanodegree}
     {Udacity}{}
-    { \href{ https://profiles.udacity.com/u/samfrances }{ profiles.udacity.com/u/samfrances } }
+    { \href{ https://confirm.udacity.com/XD5UH24D }{ confirm.udacity.com/XD5UH24D } }
     {}
 
 \cventry{ 2015 }
@@ -214,7 +281,7 @@
     {}
     {}
 
-\cventry{ 2012 -- 2013 }
+\cventry{ 2012--2013 }
     {Udacity computer science certificates}
     {Udacity}{}
     {}

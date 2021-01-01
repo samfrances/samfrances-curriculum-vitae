@@ -40,13 +40,6 @@
 
 \usepackage{multicol}
 
-% Page numbering. Remove this section for single page versions.
-\usepackage{lastpage}
-\usepackage{fancyhdr}
-\pagestyle{fancy}
-\rfoot{\thepage\ of \pageref{LastPage}}
-% End page numbering section
-
 %Link colouring - see http://tex.stackexchange.com/questions/55950/how-to-change-the-color-of-the-hyperlink-to-mail-address-in-moderncv-class
 \AtBeginDocument{
     \hypersetup{colorlinks,urlcolor=color2,linkcolor=color0}
@@ -84,66 +77,12 @@
 \makecvtitle % Print the CV title
 
 %----------------------------------------------------------------------------------------
-%   TECHNICAL SKILLS SECTION
-%----------------------------------------------------------------------------------------
-
-\section{Technical Skills}
-
-\BLOCK{ macro wrapped_skills(skills_list, linelen) -}
-    \VAR{skills_list | join(", ") | wordwrap(linelen, false, wrapstring='}\n    \cvitem{}{') }
-\BLOCK{- endmacro }
-
-\BLOCK{ with linelen = 35 }
-\begin{multicols}{2}
-
-    % Line between columns:
-    %\setlength{\columnsep}{1.5cm}
-    %\setlength{\columnseprule}{0.2pt}
-
-    \subsection{Languages}
-    \BLOCK{ with lang = skills.languages }
-    \cvitem{$\star\star\star$}{\VAR{ wrapped_skills(lang.most_experience, linelen) }}
-    \cvitem{$\star\star$}{\VAR{ wrapped_skills(lang.some_experience, linelen) }}
-    \cvitem{$\star$}{\VAR{ wrapped_skills(lang.dabbled, linelen) }}
-    \BLOCK{ endwith }
-
-    \subsection{Frameworks and libraries}
-
-    \BLOCK{ with fr = skills.frameworks }
-    \cvitem{$\star\star\star$}{\VAR{ wrapped_skills(fr.most_experience, linelen) }}
-    \cvitem{$\star\star$}{\VAR{ wrapped_skills(fr.some_experience, linelen) }}
-    \cvitem{$\star$}{\VAR{ wrapped_skills(fr.dabbled, linelen) }}
-    \BLOCK{ endwith }
-
-
-    \columnbreak
-
-    \subsection{Databases, caches, brokers etc.}
-
-    \BLOCK{ with db = skills.databases }
-    \cvitem{$\star\star\star$}{\VAR{ wrapped_skills(db.most_experience, linelen) }}
-    \cvitem{$\star\star$}{\VAR{ wrapped_skills(db.some_experience, linelen) }}
-    \cvitem{$\star$}{\VAR{ wrapped_skills(db.dabbled, linelen) }}
-    \BLOCK{ endwith }
-
-    \subsection{Other}
-
-    \BLOCK{ with other = skills.other }
-    \cvitem{OS}{\VAR{ wrapped_skills(other.os, linelen) }}
-    \cvitem{VCS}{\VAR{ wrapped_skills(other.vcs, linelen) }}
-    \cvitem{Editors}{\VAR{ wrapped_skills(other.editors, linelen) }}
-    \BLOCK{ endwith }
-
-\end{multicols}
-\BLOCK{ endwith }
-
-%----------------------------------------------------------------------------------------
 %   WORK EXPERIENCE SECTION
 %----------------------------------------------------------------------------------------
 
 \section{Work Experience}
 
-\BLOCK{ for job in work_experience }
+\BLOCK{ for job in work_experience | select("has_onepage_tag") }
 \cventry{\VAR{ job.start }--\VAR{ job.end }}{\VAR{ job.title }}{\VAR{ job.company }}{}{}{\BLOCK{ if job.description is defined }
 
     \begin{itemize}
@@ -163,16 +102,18 @@
 \section{Side Projects}
 
 \BLOCK{ for proj in project_experience }
-\cventry{ \VAR{ proj.completed } }
-    { \VAR{ proj.title }}{}{}
-    {\href{ \VAR{ proj.link.url } }{ \VAR{ proj.link.text } }}
-    {\BLOCK{ if proj.description is defined }
-        \begin{itemize}
-            \BLOCK{ for bullet in proj.description }
-            \item{\VAR{ bullet|trim }}
-            \BLOCK{ endfor }
-        \end{itemize}
-        \BLOCK{ endif }}
+    \BLOCK{ if "onepage" in proj.tags }
+    \cventry{ \VAR{ proj.completed } }
+        { \VAR{ proj.title }}{}{}
+        {\href{ \VAR{ proj.link.url } }{ \VAR{ proj.link.text } }}
+        {\BLOCK{ if proj.description is defined }
+            \begin{itemize}
+                \BLOCK{ for bullet in proj.description }
+                \item{\VAR{ bullet|trim }}
+                \BLOCK{ endfor }
+            \end{itemize}
+            \BLOCK{ endif }}
+    \BLOCK{ endif }
 \BLOCK{ endfor }
 
 
@@ -183,18 +124,19 @@
 \section{Certifications and Professional Development}
 
 \BLOCK{ for cert in certifications }
-\cventry{ \VAR{ cert.started }\BLOCK{ if cert.completed is not equalto cert.started }--\VAR{ cert.completed }\BLOCK{ endif } }
-    {\VAR{ cert.title }}
-    {\VAR{ cert.provider }}{}
-    {\BLOCK{ if cert.link is defined } \href{ \VAR{ cert.link.url } }{ \VAR{ cert.link.text } } \BLOCK{ endif }}
-    {\BLOCK{ if cert.modules is defined }
-        \begin{itemize}
-            \BLOCK{ for mod in cert.modules }
-            \item{ \VAR{ mod.title }, \href{ \VAR{ mod.link.url } }{ \VAR{ mod.link.text } } }
-            \BLOCK{ endfor }
-        \end{itemize}
-    \BLOCK{ endif }}
-
+    \BLOCK{ if "onepage" in cert.tags }
+    \cventry{ \VAR{ cert.started }\BLOCK{ if cert.completed is not equalto cert.started }--\VAR{ cert.completed }\BLOCK{ endif } }
+        {\VAR{ cert.title }}
+        {\VAR{ cert.provider }}{}
+        {\BLOCK{ if cert.link is defined } \href{ \VAR{ cert.link.url } }{ \VAR{ cert.link.text } } \BLOCK{ endif }}
+        {\BLOCK{ if cert.modules is defined }
+            \begin{itemize}
+                \BLOCK{ for mod in cert.modules }
+                \item{ \VAR{ mod.title }, \href{ \VAR{ mod.link.url } }{ \VAR{ mod.link.text } } }
+                \BLOCK{ endfor }
+            \end{itemize}
+        \BLOCK{ endif }}
+    \BLOCK{ endif }
 \BLOCK{ endfor }
 
 %----------------------------------------------------------------------------------------
@@ -207,7 +149,6 @@
 \cventry{ \VAR{ ed.start }--\VAR{ ed.end } }
     { \VAR{ ed.degree }}
     { \VAR{ ed.university } }{}{}{}
-
 \BLOCK{ endfor }
 
 

@@ -5,6 +5,7 @@ import os
 import sys
 import argparse
 import importlib
+from functools import reduce
 
 from jinja2 import Environment, FileSystemLoader
 from jinja2.exceptions import TemplateNotFound
@@ -43,6 +44,8 @@ template_dir = os.path.abspath(os.path.dirname(template_fullpath))
 template_name = os.path.basename(template_fullpath)
 
 
+def test_onepage_tag(d):
+    return "onepage" in d.get("tags", [])
 
 # Set up jinja environments
 jenv_latex = Environment(
@@ -67,6 +70,8 @@ jenv_default = Environment(
 # filter for talking a sequence of sequences and returning the concatenation
 # of those sequences
 jenv_default.filters['concat'] = lambda sequences: reduce(lambda x, y: x+y, sequences)
+for jenv in (jenv_latex, jenv_default):
+    jenv.tests["has_onepage_tag"] = test_onepage_tag
 
 # Choose jinja environment based on file extension
 extension = os.path.splitext(template_name)[1]
@@ -79,7 +84,7 @@ else:
 # Read the yaml source
 try:
     with open(src, "r") as stream:
-        variables = next(yaml.load_all(stream))
+        variables = next(yaml.safe_load_all(stream))
 except IOError as e:
     if not args.debug:
         sys.stderr.write("{}: {}\n".format(e.strerror, e.filename))
@@ -117,4 +122,4 @@ except TemplateNotFound as e:
     else:
         raise
 
-print template.render(**variables).encode('utf-8')
+print(template.render(**variables))

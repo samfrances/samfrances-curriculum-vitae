@@ -28,11 +28,17 @@ Technical Skills
       <td>{{ skills.languages.dabbled|join(', ') }}</td>
     </tr>
     <tr>
-      <td><strong>Frameworks/Libraries</strong></td>
+      <td><strong>Frameworks and libraries</strong></td>
       <td>{{ skills.frameworks.most_experience|join(', ') }}</td>
       <td>{{ skills.frameworks.some_experience|join(', ') }}</td>
       <td>{{ skills.frameworks.dabbled|join(', ') }}</td>
     </tr>
+    {% if skills.databases %}
+      <td><strong>Databases, caches, message brokers etc.</strong></td>
+      <td>{{ skills.databases.most_experience|join(', ') }}</td>
+      <td>{{ skills.databases.some_experience|join(', ') }}</td>
+      <td>{{ skills.databases.dabbled|join(', ') }}</td>
+    {% endif %}
     <tr>
       <td><strong>Other</strong></td>
       <td colspan="3">{{ skills.other.values() | concat | join(', ') }}</td>
@@ -44,7 +50,7 @@ Work Experience
 ---------------
 
 {% for job in work_experience %}
-- {{ job.start }} - {{ job.end }}: **{{ job.title }}**, *{{ job.company }}*
+- {{ job.start }} – {{ job.end }}: **{{ job.title }}**, *{{ job.company }}*
   {% if job.description is defined %}
     {% for bullet in job.description %}
     + {{ bullet|trim }}
@@ -52,7 +58,7 @@ Work Experience
   {% endif %}
 {% endfor %}
 
-Project Experience
+Side Projects
 ------------------
 
 {% for pr in project_experience %}
@@ -68,7 +74,7 @@ Certifications and Professional Development
 ------------------------
 
 {% for cs in certifications %}- {{ cs.started }}{% if cs.completed is not equalto cs.started %}
- - {{ cs.completed }}{% endif %}: **{{ cs.title }}**, *{{ cs.provider }}*{% if cs.link is defined %}, [{{ cs.link.text }}]({{ cs.link.url }}){% endif %}
+ – {{ cs.completed }}{% endif %}: **{{ cs.title }}**, *{{ cs.provider }}*{% if cs.link is defined %}, [{{ cs.link.text }}]({{ cs.link.url }}){% endif %}
 
   {% if cs.modules is defined %}
     {% for mod in cs.modules %}

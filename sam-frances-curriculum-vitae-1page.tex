@@ -1,0 +1,198 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% "ModernCV" CV and Cover Letter
+% LaTeX Template
+% Version 1.1 (9/12/12)
+%
+% This template has been downloaded from:
+% http://www.LaTeXTemplates.com
+%
+% Original author:
+% Xavier Danaux (xdanaux@gmail.com)
+%
+% License:
+% CC BY-NC-SA 3.0 (http://creativecommons.org/licenses/by-nc-sa/3.0/)
+%
+% Important note:
+% This template requires the moderncv.cls and .sty files to be in the same
+% directory as this .tex file. These files provide the resume style and themes
+% used for structuring the document.
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%----------------------------------------------------------------------------------------
+%   PACKAGES AND OTHER DOCUMENT CONFIGURATIONS
+%----------------------------------------------------------------------------------------
+
+\documentclass[10pt,a4paper,sans]{moderncv} % Font sizes: 10, 11, or 12; paper sizes: a4paper, letterpaper, a5paper, legalpaper, executivepaper or landscape; font families: sans or roman
+
+\moderncvstyle{classic} % CV theme - options include: 'casual' (default), 'classic', 'oldstyle' and 'banking'
+\moderncvcolor{blue} % CV color - options include: 'blue' (default), 'orange', 'green', 'red', 'purple', 'grey' and 'black'
+
+\usepackage{lipsum} % Used for inserting dummy 'Lorem ipsum' text into the template
+
+\usepackage[scale=0.85]{geometry} % Reduce document margins
+%\setlength{\hintscolumnwidth}{3cm} % Uncomment to change the width of the dates column
+%\setlength{\makecvtitlenamewidth}{10cm} % For the 'classic' style, uncomment to adjust the width of the space allocated to your name
+
+% Removes full stops from the end of cventrys
+\usepackage{xpatch}
+\xpatchcmd{\cventry}{.\strut}{\strut}{}{}
+
+\usepackage{multicol}
+
+%Link colouring - see http://tex.stackexchange.com/questions/55950/how-to-change-the-color-of-the-hyperlink-to-mail-address-in-moderncv-class
+\AtBeginDocument{
+    \hypersetup{colorlinks,urlcolor=color2,linkcolor=color0}
+}
+
+
+%----------------------------------------------------------------------------------------
+%   NAME AND CONTACT INFORMATION SECTION
+%----------------------------------------------------------------------------------------
+
+\firstname{Sam} % Your first name
+\familyname{Frances} % Your last name
+
+% All information in this block is optional, comment out any lines you don't need
+%\title{Curriculum Vitae}
+\address{Cambridge, UK}{}
+%\mobile{(+33) 7 86 33 40 99}
+%\phone{(000) 111 1112}
+%\fax{(000) 111 1113}
+\email{sam@samfrances.uk}
+\homepage{samfrances.co.uk}
+\social[homepage]{samfrances}
+\social[github]{samfrances}
+\social[linkedin]{samfrances}
+%\extrainfo{}
+%\photo[70pt][0.4pt]{picture} % The first bracket is the picture height, the second is %the thickness of the frame around the picture (0pt for no frame)
+
+\quote{Experienced software engineer with with solid abilities in frontend and backend web development. I enjoy pushing myself to master new languages, frameworks, design patterns and programming paradigms.}
+
+%----------------------------------------------------------------------------------------
+
+\begin{document}
+
+\makecvtitle % Print the CV title
+
+%----------------------------------------------------------------------------------------
+%   WORK EXPERIENCE SECTION
+%----------------------------------------------------------------------------------------
+
+\section{Work Experience}
+
+\cventry{2021--current}{Senior Software Engineer}{Cydar Medical}{}{}{}
+\cventry{2017--2020}{Front End Software Developer}{Cydar Medical}{}{}{
+    \begin{itemize}
+        \item{Member of development team for a growing medical SaaS company, providing cloud-based fusion imaging for surgical guidance.}
+        \item{Created front-end of a project to allow clinicians make adjustments to aorta overlays during endovascular procedures. Implemented using Redux, Typescript, Jest and Python.}
+        \item{Assisted with the design of an overhaul of Cydar's internal content-addressable storage service. Prototyped a "shared streams" mechanism allow more efficient downloads when multiple clients access the same files concurrently, using Python, Asyncio, Aiohttp and Boto.}
+        \item{Worked on front-end and API endpoints for "Dynamic Morphology Correction" feature, using Typescript, Three.js, Python, Tornado and JSON-Schema.}
+        \item{Led development of a cloud-based solution for presenting native 3D accelerated software in the browser.}
+        \item{Architected and managed the rewrite of a microservice to orchestrate scaling of large pools of EC2 GPU workers, including a web-based control GUI, an improved incremental scale-down system, and greater reliability.}
+    \end{itemize}
+}
+\cventry{2016--2017}{Junior Front End Developer}{Cydar Medical}{}{}{}
+
+
+%----------------------------------------------------------------------------------------
+%   PROJECT EXPERIENCE SECTION
+%----------------------------------------------------------------------------------------
+
+\section{Side Projects}
+
+    \cventry{ February 2019 }
+        { Rejection App}{}{}
+        {\href{ https://github.com/samfrances/rejection }{ github.com/samfrances/rejection }}
+        {            \begin{itemize}
+                \item{Frontend application built in TypeScript and React, and using the useState and useReducer hooks.}
+            \end{itemize}
+}
+    \cventry{ February 2019 }
+        { C++ Two-Player Snake Clone}{}{}
+        {\href{ https://github.com/samfrances/CppND-Capstone-Snake-Game }{ github.com/samfrances/CppND-Capstone-Snake-Game }}
+        {            \begin{itemize}
+                \item{An SDL-based two-player snake clone, developed using modern C++ techniques.}
+            \end{itemize}
+}
+    \cventry{ November 2019 }
+        { C++ System Monitor App}{}{}
+        {\href{ https://github.com/samfrances/CppND-System-Monitor-Project-Updated }{ github.com/samfrances/CppND-System-Monitor-Project-Updated }}
+        {            \begin{itemize}
+                \item{A simplified htop clone for monitoring a linux operating system.}
+                \item{Developed in a test-driven manner using GoogleTest and GoogleMock.}
+            \end{itemize}
+}
+    \cventry{ April 2016 }
+        { Kalah Game API}{}{}
+        {\href{ http://www.github.com/samfrances/udacity-kalah }{ github.com/samfrances/udacity-kalah }}
+        {            \begin{itemize}
+                \item{Created an API for Kalah, a turn-based two-player "count and capture" board game.}
+                \item{Written in Python using Google App Engine, Cloud Endpoints and Datastore.}
+            \end{itemize}
+}
+    \cventry{ February 2015 }
+        { Udacity Movies Website}{}{}
+        {\href{ http://www.github.com/samfrances/udacity-movies-website }{ github.com/samfrances/udacity-movies-website }}
+        {            \begin{itemize}
+                \item{Single-page app to display information from the OMDb API, and combine with related trailers from Youtube.}
+                \item{Combined both front- and back-end technologies, including Python, Bootstrap, JQuery, WSGI, HTML5.}
+            \end{itemize}
+}
+
+
+%----------------------------------------------------------------------------------------
+%   CERTIFICATIONS SECTION
+%----------------------------------------------------------------------------------------
+
+\section{Certifications and Professional Development}
+
+    \cventry{ 2019--2020 }
+        {C++ Nanodegree}
+        {Udacity}{}
+        { \href{ https://confirm.udacity.com/7DDGS6J2 }{ confirm.udacity.com/7DDGS6J2 } }
+        {}
+    \cventry{ 2018 }
+        {JavaScript Foundations}
+        {DevAnywhere.io}{}
+        { \href{ https://www.credential.net/a796d867-1324-4698-bdb1-9f678cff402b }{ credential.net/a796d867-1324-4698-bdb1-9f678cff402b } }
+        {}
+    \cventry{ 2016 }
+        {Front-End Web Developer Nanodegree}
+        {Udacity}{}
+        { \href{ https://confirm.udacity.com/QJCGFPED }{ confirm.udacity.com/QJCGFPED } }
+        {}
+    \cventry{ 2016 }
+        {edX Computer Science}
+        {HarvardX}{}
+        {}
+        {            \begin{itemize}
+                \item{ CS50x Introduction to Computer Science, \href{ https://courses.edx.org/certificates/13223d0945a24197a00f9ee0b92ba76f }{ courses.edx.org/certificates/13223d0945a24197a00f9ee0b92ba76f } }
+            \end{itemize}
+}
+    \cventry{ 2015--2016 }
+        {Full Stack Web Developer Nanodegree}
+        {Udacity}{}
+        { \href{ https://confirm.udacity.com/XD5UH24D }{ confirm.udacity.com/XD5UH24D } }
+        {}
+    \cventry{ 2015 }
+        {LINX Accredited Internet Technician 1}
+        {Systems \& Network Training}{}
+        {}
+        {}
+
+%----------------------------------------------------------------------------------------
+%   EDUCATION SECTION
+%----------------------------------------------------------------------------------------
+
+\section{Education}
+
+\cventry{ 2009--2010 }
+    { M. A. Linguistics}
+    { University College London }{}{}{}
+\cventry{ 2006--2009 }
+    { B. A. Philosophy}
+    { King's College London }{}{}{}
+
+
+\end{document}
