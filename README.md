@@ -95,7 +95,7 @@ Certifications and Professional Development
 - 2018: **JavaScript Foundations**, *DevAnywhere.io*, [credential.net/a796d867-1324-4698-bdb1-9f678cff402b](https://www.credential.net/a796d867-1324-4698-bdb1-9f678cff402b)
 - 2016: **Front-End Web Developer Nanodegree**, *Udacity*, [confirm.udacity.com/QJCGFPED](https://confirm.udacity.com/QJCGFPED)
 - 2016: **edX Computer Science**, *HarvardX*
-  + CS50x Introduction to Computer Science, [courses.edx.org/certificates/13223d0945a24197a00f9ee0b92ba76f](https://courses.edx.org/certificates/13223d0945a24197a00f9ee0b92ba76f)
+  + CS50x Introduction to Computer Science, [courses.edx.org/certificates/77c3400beb254e21a843faf77a20b518](https://courses.edx.org/certificates/77c3400beb254e21a843faf77a20b518)
 - 2015 – 2016: **Full Stack Web Developer Nanodegree**, *Udacity*, [confirm.udacity.com/XD5UH24D](https://confirm.udacity.com/XD5UH24D)
 - 2015: **LINX Accredited Internet Technician 1**, *Systems \& Network Training*
 - 2012 – 2013: **Udacity computer science certificates**, *Udacity*
