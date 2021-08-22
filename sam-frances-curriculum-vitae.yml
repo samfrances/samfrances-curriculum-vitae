@@ -17,7 +17,7 @@ links:
 
 
 statement: >
-  Experienced software engineer with with solid abilities in frontend and
+  Experienced software engineer with solid abilities in frontend and
   backend web development. I enjoy pushing myself to master new
   languages, frameworks, design patterns and programming paradigms.
 
@@ -129,6 +129,29 @@ work_experience:
     company: The London Internet Exchange Ltd (LINX)
 
 project_experience:
+
+  - completed: Ongoing
+    title: Metacircular Scheme Interpreter
+    link:
+      url: https://github.com/samfrances/meta-circular
+      text: github.com/samfrances/meta-circular
+    description:
+      - >
+        A "meta-circular" interpreter for a subset of scheme, written in Racket.
+      - >
+        Implements Haskell-inspired auto-currying.
+
+  - completed: July 2020
+    title: Analytic Tableau Prover
+    link:
+      url: https://github.com/samfrances/analytic_tableaux/
+      text: github.com/samfrances/analytic\_tableaux/
+    description:
+      - >
+        A program for proof-checking sequents of sentential logic
+        using the "truth-tree" method.
+      - >
+        Written in Elixir, and makes use of Erlang's yecc parsing library
 
   - completed: February 2019
     title: Rejection App
